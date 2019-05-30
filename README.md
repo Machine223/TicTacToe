@@ -1,6 +1,6 @@
 ## TIC TAC TOE 
 
-I developed a web game with JavaScript with the codeCamp course (https://www.freecodecamp.com)
+### I developed a web game with JavaScript .
 I used an algorithm that allows the AIPlayer to always win the game or at least make lose the human player. This algorithm is based on recursion in mathematics and allows the AI to choose each time the best move option to beat the opponent.
 
 You did not believe me, so try it maybe you could win!
