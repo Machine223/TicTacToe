@@ -121,7 +121,10 @@ function checkTie(){
     return false;
 }
 
-function minimax(newBoard,player){
+// Function for the algo
+function minimax( newBoard, player){
+    // 1. on verifie toutes les place libre pour voir si le robot peut gagner ce tour
+    // on lui donner les place libre sur la grille
     var availableSpots = emptySquares(newBoard);
     if(checkWin(newBoard,player)){
         return {score:-10};
@@ -130,6 +133,7 @@ function minimax(newBoard,player){
     }else if(availableSpots.length === 0){
         return {score: 0};
     }
+    // 2. Debut de la boucle pour verifier les place libre
     var moves = [];
     for(var i=0; i < availableSpots.length; i++){
         var move = {};
@@ -137,15 +141,16 @@ function minimax(newBoard,player){
         newBoard[availableSpots[i]] = player;
 
         if (player == aiPlayer){
-            var result = minimax(newBoard, huPlayer);
+            var result = minimax(newBoard, huPlayer); // revient a l'etape 1.
             move.score = result.score;
         }else {
-            var result = minimax(newBoard, aiPlayer);
+            var result = minimax(newBoard, aiPlayer); // revient a l'etape 1.
             move.score = result.score;
         }
         //reset le newbord comme avant
         newBoard[availableSpots[i]] = move.index;
-        moves.push(move);
+        // on place les mouvements pour les enregistrer
+        moves.push(move); 
     }
     var bestMove;
     if(player === aiPlayer){
@@ -166,5 +171,5 @@ function minimax(newBoard,player){
         }
 
     }
-    return moves[bestMove];
+    return moves[bestMove]; // le choix du AI 
 }
