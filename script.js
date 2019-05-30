@@ -4,10 +4,22 @@
 // 3. Implementation of Ai and Winner notification
 // 4. Minimax Algorithm logic (hard part)
 
-var origBoard;        // Variable pour la grille
-const huPlayer = 'O'; // Player 1
-const aiPlayer = 'X'; // Player 2
-const winCombos = [ // tous les combos possible pour gagne
+
+// 4. Minimax function composition description (fonction recurssive)
+/* A Minimax algorithm can be best defined as 
+a recursive function that does the following things:
+
+1. Return a value if a terminal state is found (+10, 0, -10)
+2. Go through available spots on the board
+3. Call the minimax function on each available spot (recursion)
+4. Evaluate returning values from function calls
+5. And return the best value
+*/
+
+var origBoard;          // Variable pour la grille
+const huPlayer = 'O';   // Player 1
+const aiPlayer = 'X';   // Player 2
+const winCombos = [     // tous les combos possible pour gagne
     [0,1,2],
     [3,4,5],
     [6,7,8],
