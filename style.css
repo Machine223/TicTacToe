@@ -1,5 +1,7 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:300';
+
 td{
-    border: 3px solid rgb(0, 0, 0);
+    border: 3px solid rgb(44, 41, 41);
     height: 125px;
     width: 125px;
     text-align: center;
@@ -41,6 +43,37 @@ table tr td:last-child{
     padding-bottom: 50px;
     text-align: center;
     border-radius: 5px;
+    font-family: 'Lato', sans-serif;
     color:white;
     font-size: 2em;
 }
+html{
+    width:100%;
+    height:100%;
+    background:linear-gradient(#f7aeb7, #ffcccc, #ffeee6);
+}
+button{
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px;
+    min-width: 64px;
+    height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}  
