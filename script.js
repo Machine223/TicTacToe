@@ -105,8 +105,10 @@ function emptySquares(){
 }
 // AiPlayer sous forme de selection par defaut
 function bestSpot(){
-    return emptySquares()[0]; // joue sur le prochain espace libre
+    //return emptySquares()[0]; // joue sur le prochain espace libre
+    return minimax(origBoard, aiPlayer).index; // appel du nouveau algo
 }
+
 function checkTie(){
     if (emptySquares().length == 0) {
         for(var i = 0 ; i< cells.length; i++){
@@ -117,4 +119,52 @@ function checkTie(){
         return true;
     }
     return false;
+}
+
+function minimax(newBoard,player){
+    var availableSpots = emptySquares(newBoard);
+    if(checkWin(newBoard,player)){
+        return {score:-10};
+    }else if(checkWin(newBoard,aiPlayer)){
+        return {score:10};
+    }else if(availableSpots.length === 0){
+        return {score: 0};
+    }
+    var moves = [];
+    for(var i=0; i < availableSpots.length; i++){
+        var move = {};
+        move.index = newBoard[availableSpots[i]];
+        newBoard[availableSpots[i]] = player;
+
+        if (player == aiPlayer){
+            var result = minimax(newBoard, huPlayer);
+            move.score = result.score;
+        }else {
+            var result = minimax(newBoard, aiPlayer);
+            move.score = result.score;
+        }
+        //reset le newbord comme avant
+        newBoard[availableSpots[i]] = move.index;
+        moves.push(move);
+    }
+    var bestMove;
+    if(player === aiPlayer){
+        var bestScore = -10000;
+        for(var i=0; i < moves.length; i++){
+            if(moves[i].score > bestScore){
+               bestScore = moves[i].score;
+               bestMove = i; 
+            }
+        }
+    }else{
+        var bestScore = 10000;
+        for(var i=0; i < moves.length; i++){
+            if(moves[i].score < bestScore){
+               bestScore = moves[i].score;
+               bestMove = i; 
+            }
+        }
+
+    }
+    return moves[bestMove];
 }
