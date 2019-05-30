@@ -11,7 +11,7 @@ You did not believe me, so try it maybe you could win!
 3. Implementation of Ai and Winner notification
 4. Minimax Algorithm logic (hard part)
 
-![alt text](https://github.com/Machine223/TicTacToe/minimaxAlgo.PNG)
+![alt text](https://github.com/Machine223/TicTacToe/blob/master/minimaxAlgo.png)
 ### 4. Minimax function composition description
 A Minimax algorithm can be best defined as 
 a recursive function that does the following things:
