@@ -1,12 +1,12 @@
-// Modele base on https://www.freecodecamp.com
+// Game Modele base on https://www.freecodecamp.com
 // 1. Bassic Setup
 // 2. Determine Winner
 // 3. Implementation of Ai and Winner notification
 // 4. Minimax Algorithm logic (hard part)
 
-var origBoard;
-const huPlayer = 'O';
-const aiPlayer = 'X';
+var origBoard;        // Variable pour la grille
+const huPlayer = 'O'; // Player 1
+const aiPlayer = 'X'; // Player 2
 const winCombos = [ // tous les combos possible pour gagne
     [0,1,2],
     [3,4,5],
@@ -42,11 +42,12 @@ function turnClick(square){
     }
 }
 
+// la fonction pour faire apparaitre le symbole du joueur
 function turn(squareId, player){
     origBoard[squareId] = player; // on associe la case au joueur
     document.getElementById(squareId).innerText = player; // on affiche sur la case le symbole du joueur
     let gameWon = checkWin(origBoard, player);
-    if (gameWon) 
+    if (gameWon) // si la game est remporte par un jouer alors gameOver 
         gameOver(gameWon)
 }
 
@@ -81,17 +82,18 @@ function gameOver(gameWon) {
     declareWinner(gameWon.player == huPlayer ? "Vous avez gagné!" : "Vous avez perdu!")
 }
 
-
-function declareWinner(who){
+// affichage du message pour le gagnant, le perdant ou match nul.
+function declareWinner(message){
     document.querySelector(".endgame").style.display = "block";
-    document.querySelector(".endgame .text").innerText = who;
+    document.querySelector(".endgame .text").innerText = message;
 }
 
 function emptySquares(){
     return origBoard.filter(s => typeof s == 'number');
 }
+// AiPlayer sous forme de selection par defaut
 function bestSpot(){
-    return emptySquares()[0];
+    return emptySquares()[0]; // joue sur le prochain espace libre
 }
 function checkTie(){
     if (emptySquares().length == 0) {
@@ -99,7 +101,7 @@ function checkTie(){
             cells[i].style.backgroundColor = "green";
             cells[i].removeEventListener('click',turnClick,false); 
         }
-        declareWinner("Tie Game!");
+        declareWinner("Match nul!");
         return true;
     }
     return false;
