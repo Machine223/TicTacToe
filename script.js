@@ -127,13 +127,13 @@ function minimax( newBoard, player){
     // on lui donner les place libre sur la grille
     var availableSpots = emptySquares(newBoard);
     if(checkWin(newBoard,player)){
-        return {score:-5}; // beast mode -10
+        return {score:-10}; // beast mode -10
     }else if(checkWin(newBoard,aiPlayer)){
-        return {score:5}; // beast mode 10
+        return {score:10}; // beast mode 10
     }else if(availableSpots.length === 0){
-        return {score: 10}; // beast mode 0
+        return {score: 0}; // beast mode 0
     }
-    // 2. Debut de la boucle pour verifier les place libre
+    // 2. Debut de la boucle pour verifier et attribue un score a chaque place libre 
     var moves = [];
     for(var i=0; i < availableSpots.length; i++){
         var move = {};
@@ -142,10 +142,10 @@ function minimax( newBoard, player){
 
         if (player == aiPlayer){
             var result = minimax(newBoard, huPlayer); // revient a l'etape 1.
-            move.score = result.score;
+            move.score = result.score * Math.random() * 10; // a ete ajouter pour un a effet aleatoir 
         }else {
             var result = minimax(newBoard, aiPlayer); // revient a l'etape 1.
-            move.score = result.score;
+            move.score = result.score * Math.random() * 10;
         }
         //reset le newbord comme avant
         newBoard[availableSpots[i]] = move.index;
