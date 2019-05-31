@@ -121,17 +121,17 @@ function checkTie(){
     return false;
 }
 
-// Function for the algo
+// Fonction pour l'algo
 function minimax( newBoard, player){
     // 1. on verifie toutes les place libre pour voir si le robot peut gagner ce tour
     // on lui donner les place libre sur la grille
     var availableSpots = emptySquares(newBoard);
     if(checkWin(newBoard,player)){
-        return {score:-10};
+        return {score:-5}; // beast mode -10
     }else if(checkWin(newBoard,aiPlayer)){
-        return {score:10};
+        return {score:5}; // beast mode 10
     }else if(availableSpots.length === 0){
-        return {score: 0};
+        return {score: 10}; // beast mode 0
     }
     // 2. Debut de la boucle pour verifier les place libre
     var moves = [];
