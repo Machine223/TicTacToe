@@ -127,11 +127,11 @@ function minimax( newBoard, player){
     // on lui donner les place libre sur la grille
     var availableSpots = emptySquares(newBoard);
     if(checkWin(newBoard,player)){
-        return {score:-10}; // beast mode -10
+        return {score:-10}; // beast mode -10 sinon -5
     }else if(checkWin(newBoard,aiPlayer)){
-        return {score:10}; // beast mode 10
+        return {score:10}; // beast mode 10 sinon 10 
     }else if(availableSpots.length === 0){
-        return {score: 0}; // beast mode 0
+        return {score: 0}; // beast mode 0 sinon -1
     }
     // 2. Debut de la boucle pour verifier et attribue un score a chaque place libre 
     var moves = [];
