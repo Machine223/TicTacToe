@@ -142,10 +142,10 @@ function minimax( newBoard, player){
 
         if (player == aiPlayer){
             var result = minimax(newBoard, huPlayer); // revient a l'etape 1.
-            move.score = result.score * Math.random() * 10; // a ete ajouter pour un a effet aleatoir 
+            move.score = result.score * Math.random(); // a ete ajouter pour un a effet aleatoir 
         }else {
             var result = minimax(newBoard, aiPlayer); // revient a l'etape 1.
-            move.score = result.score * Math.random() * 10;
+            move.score = result.score * Math.random();
         }
         //reset le newbord comme avant
         newBoard[availableSpots[i]] = move.index;
