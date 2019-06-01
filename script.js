@@ -3,18 +3,16 @@
 // 2. Determine Winner
 // 3. Implementation of Ai and Winner notification
 // 4. Minimax Algorithm logic (hard part)
+    // 4. Minimax function composition description (fonction recurssive)
+    /* A Minimax algorithm can be best defined as 
+    a recursive function that does the following things:
 
-
-// 4. Minimax function composition description (fonction recurssive)
-/* A Minimax algorithm can be best defined as 
-a recursive function that does the following things:
-
-1. Return a value if a terminal state is found (+10, 0, -10)
-2. Go through available spots on the board
-3. Call the minimax function on each available spot (recursion)
-4. Evaluate returning values from function calls
-5. And return the best value
-*/
+    1. Return a value if a terminal state is found (+10, 0, -10)
+    2. Go through available spots on the board
+    3. Call the minimax function on each available spot (recursion)
+    4. Evaluate returning values from function calls
+    5. And return the best value
+    */
 
 var origBoard;          // Variable pour la grille
 const huPlayer = 'O';   // Player 1
