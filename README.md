@@ -25,3 +25,4 @@ a recursive function that does the following things:
 ![alt text](https://github.com/Machine223/TicTacToe/blob/master/minimaxAlgo.png)
 
 ![alt text](https://github.com/Machine223/TicTacToe/blob/master/WinOnly.PNG)
+![alt text](https://github.com/Machine223/TicTacToe/blob/master/LoseOnly.PNG)
