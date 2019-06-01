@@ -23,3 +23,5 @@ a recursive function that does the following things:
 5. And return the best value
 
 ![alt text](https://github.com/Machine223/TicTacToe/blob/master/minimaxAlgo.png)
+
+![alt text](https://github.com/Machine223/TicTacToe/blob/master/WinOnly.PNG)
