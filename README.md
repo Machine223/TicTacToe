@@ -6,7 +6,7 @@ I used an algorithm that allows the AIPlayer to always win the game or at least 
 You did not believe me, so try it maybe you could win!
 
 #### Game Modele base on https://www.freecodecamp.com
-1. Bassic Setup
+1. Basic Setup
 2. Determine Winner
 3. Implementation of Ai and Winner notification
 4. Minimax Algorithm logic (hard part)
